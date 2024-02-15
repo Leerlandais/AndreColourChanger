@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+    font-family: cursive;
+    text-decoration: underline;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bodyDiv {
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 75vw;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    max-width: 75vw;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#colourP {
+    text-align: center;
+}
