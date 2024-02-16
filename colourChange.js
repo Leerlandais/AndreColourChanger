@@ -2,8 +2,7 @@ const textInp = document.querySelector("#textInput");
 const bodyInp = document.querySelector("#bodyInput");
 const body = document.querySelector("#colourBody");
 const para = document.querySelector("#colourP");
-const myHeader = document.querySelector("#myHeader");
-const otherHeader = document.querySelectorAll(".scrollThis");
+const otherHeader = document.querySelectorAll("p");
 const myText = document.getElementById("myText");
 const messLen = document.getElementById("messLen");
 const maxLen = document.getElementById("maxLen")
@@ -26,11 +25,12 @@ let origColText = localStorage.getItem("textCol");
 textInp.style.value = origColText;
 para.style.color =  origColText;
 
-let savesUsed = 0;
+savesUsed = sessionStorage.getItem("SavesUsed");
+saveCount.textContent = savesUsed;
 let currentCycle = 1;
-sessionStorage.setItem("SavesUsed", savesUsed)
 
-for (let i = 0; i <= otherHeader.length; i++) {
+
+for (let i = 0; i < otherHeader.length; i++) {
     otherHeader[i].addEventListener('click', scrollToHeader);
 }
 
@@ -77,7 +77,7 @@ function saveThisColour() {
 }
 
 function cycleTheColours() {
-    if (currentCycle > 8) {
+    if (currentCycle > savesUsed) {
         currentCycle = 1;
     }
        let thisCycleBoby = sessionStorage.getItem("SaveFileBody"+currentCycle);
